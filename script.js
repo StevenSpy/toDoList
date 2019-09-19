@@ -12,9 +12,26 @@ function resetInput() {
 }
 
 function addTextNode() {
-  li.insertAdjacentText("beforeend", `input.value`);
+  li.insertAdjacentText("beforeend", document.createTextNode(input.value));
 }
 
 function insertLiToUl() {
   ul.insertAdjacentElement("beforeend", "li");
 }
+
+function createListElement(){
+  function addTextNode ();
+  function insertLiToUl ();
+  function resetInput ();
+}
+
+function addListAfterClick (){
+  inputLength () > 0?createListElement();
+}
+
+function addListAfterEnterPress (event){
+  inputLength () > 0 && event.keyCode === 13 ? createListElement ();
+}
+
+button.addEventListener("click", addListAfterClick);
+input.addEventListener("keypress", addListAfterEnterPress);
