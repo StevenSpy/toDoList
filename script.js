@@ -49,6 +49,12 @@ function deleteLi() {
   }
 }
 
+function strikeThrough(event) {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("checked");
+  }
+}
+
 function createListElement() {
   createNewLi();
   addTextNode();
@@ -69,6 +75,8 @@ function addListAfterEnterPress(key) {
     createListElement();
   }
 }
+
+ul.addEventListener("click", strikeThrough);
 
 button.addEventListener("click", addListAfterClick);
 
