@@ -15,13 +15,14 @@ function resetInput() {
   input.value = "";
 }
 
+function capitalize() {
+  return (input.value =
+    input.value.charAt(0).toUpperCase() +
+    input.value.substr(1).toLocaleLowerCase());
+}
+
 function addTextNode() {
-  li.appendChild(
-    document.createTextNode(
-      input.value.charAt(0).toUpperCase() +
-        input.value.substr(1).toLocaleLowerCase()
-    )
-  );
+  li.appendChild(document.createTextNode(capitalize()));
 }
 
 function insertLiToUl() {
