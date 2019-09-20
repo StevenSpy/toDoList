@@ -16,7 +16,12 @@ function resetInput() {
 }
 
 function addTextNode() {
-  li.appendChild(document.createTextNode(input.value));
+  li.appendChild(
+    document.createTextNode(
+      input.value.charAt(0).toUpperCase() +
+        input.value.substr(1).toLocaleLowerCase()
+    )
+  );
 }
 
 function insertLiToUl() {
