@@ -1,5 +1,7 @@
-const button = document.querySelector("button");
-const input = document.querySelector("input");
+"use strict";
+
+const button = document.querySelector("#submit");
+const input = document.querySelector("#userInput");
 const ul = document.querySelector("ul");
 let li;
 
@@ -21,6 +23,14 @@ function capitalize() {
     input.value.substr(1).toLocaleLowerCase());
 }
 
+function createDeleteLiButton() {
+  let deleteLiButton = document.createElement("button");
+  let cross = document.createTextNode("\u00D7");
+  deleteLiButton.className = "close";
+  deleteLiButton.append(cross);
+  li.append(deleteLiButton);
+}
+
 function addTextNode() {
   li.appendChild(document.createTextNode(capitalize()));
 }
@@ -34,6 +44,7 @@ function createListElement() {
   addTextNode();
   insertLiToUl();
   resetInput();
+  createDeleteLiButton();
 }
 
 function addListAfterClick() {
@@ -42,8 +53,8 @@ function addListAfterClick() {
   }
 }
 
-function addListAfterEnterPress(event) {
-  if (inputLength() > 0 && event.keyCode === 13) {
+function addListAfterEnterPress(key) {
+  if (inputLength() > 0 && key.keyCode === 13) {
     createListElement();
   }
 }
