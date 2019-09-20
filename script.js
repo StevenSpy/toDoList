@@ -23,14 +23,6 @@ function capitalize() {
     input.value.substr(1).toLocaleLowerCase());
 }
 
-function createDeleteLiButton() {
-  let deleteLiButton = document.createElement("button");
-  let cross = document.createTextNode("\u00D7");
-  deleteLiButton.className = "close";
-  deleteLiButton.append(cross);
-  li.append(deleteLiButton);
-}
-
 function addTextNode() {
   li.appendChild(document.createTextNode(capitalize()));
 }
@@ -39,12 +31,31 @@ function insertLiToUl() {
   ul.insertAdjacentElement("beforeend", li);
 }
 
+function createDeleteLiButton() {
+  let deleteLiButton = document.createElement("button");
+  let cross = document.createTextNode("\u00D7");
+  deleteLiButton.className = "close";
+  deleteLiButton.append(cross);
+  li.append(deleteLiButton);
+}
+
+function deleteLi() {
+  let close = document.getElementsByClassName("close");
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.remove();
+    };
+  }
+}
+
 function createListElement() {
   createNewLi();
   addTextNode();
   insertLiToUl();
   resetInput();
   createDeleteLiButton();
+  deleteLi();
 }
 
 function addListAfterClick() {
