@@ -1,10 +1,14 @@
-const button = document.querySelector("submit");
-const input = document.querySelector("userInput");
+const button = document.querySelector("button");
+const input = document.querySelector("input");
 const ul = document.querySelector("ul");
-const li = document.createElement("li");
+let li;
 
 function inputLength() {
   return input.value.length;
+}
+
+function createNewLi() {
+  li = document.createElement("li");
 }
 
 function resetInput() {
@@ -12,26 +16,32 @@ function resetInput() {
 }
 
 function addTextNode() {
-  li.insertAdjacentText("beforeend", document.createTextNode(input.value));
+  li.appendChild(document.createTextNode(input.value));
 }
 
 function insertLiToUl() {
-  ul.insertAdjacentElement("beforeend", "li");
+  ul.insertAdjacentElement("beforeend", li);
 }
 
-function createListElement(){
-  function addTextNode ();
-  function insertLiToUl ();
-  function resetInput ();
+function createListElement() {
+  createNewLi();
+  addTextNode();
+  insertLiToUl();
+  resetInput();
 }
 
-function addListAfterClick (){
-  inputLength () > 0?createListElement();
+function addListAfterClick() {
+  if (inputLength() > 0) {
+    createListElement();
+  }
 }
 
-function addListAfterEnterPress (event){
-  inputLength () > 0 && event.keyCode === 13 ? createListElement ();
+function addListAfterEnterPress(event) {
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListElement();
+  }
 }
 
 button.addEventListener("click", addListAfterClick);
+
 input.addEventListener("keypress", addListAfterEnterPress);
