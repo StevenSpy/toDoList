@@ -14,18 +14,13 @@ body {
   grid-template-areas: ". . titre . ." ". input input submit ." ". ul ul ul ." ". . darkMode . .";
   grid-gap: 1rem;
   margin-top: 25vh;
-  border: 0.75rem solid black;
-  border-radius: 4em;
-  -webkit-border-radius: 4em;
-  -moz-border-radius: 4em;
-  -ms-border-radius: 4em;
-  -o-border-radius: 4em;
+  background-image: url(/soleil.jpg);
 }
 
 body.darkMode {
   color: white;
-  background-color: black;
-  border: 0.75rem solid rgb(86, 177, 13);
+  background-image: url(/Lune.jpg);
+  background-size: cover;
 }
 
 h1 {
