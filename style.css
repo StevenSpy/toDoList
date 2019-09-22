@@ -1,3 +1,8 @@
+body.darkMode {
+  color: white;
+  background-color: black;
+}
+
 ul li.checked {
   text-decoration: line-through;
 }
