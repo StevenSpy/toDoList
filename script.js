@@ -56,7 +56,7 @@ function strikeThrough(event) {
   }
 }
 
-function changeNormalModeToDarkMode(ev) {
+function changeLightModeToDarkMode(ev) {
   if (ev.target.tagName === "BUTTON") {
     document.body.classList.toggle("darkMode");
   }
@@ -87,6 +87,6 @@ ul.addEventListener("click", strikeThrough);
 
 button.addEventListener("click", addListAfterClick);
 
-darkMode.addEventListener("click", changeNormalModeToDarkMode);
+darkMode.addEventListener("click", changeLightModeToDarkMode);
 
 input.addEventListener("keypress", addListAfterEnterPress);
