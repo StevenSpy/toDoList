@@ -2,6 +2,7 @@ html {
   font-size: 10px;
   margin: 0;
   padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     ". ul ul ul ."
     ". . darkMode . .";
   grid-gap: 1rem;
+  margin-top: 25vh;
 }
 
 body.darkMode {
@@ -43,6 +45,9 @@ ul {
 
 li {
   font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "li .  close";
 }
 
 ul li.checked {
@@ -51,7 +56,8 @@ ul li.checked {
 
 #submit {
   grid-area: submit;
-  font-size: 1rem;
+  width: 20rem;
+  font-size: 1.25rem;
   border-radius: 1.5rem;
   -webkit-border-radius: 1.5rem;
   -moz-border-radius: 1.5rem;
@@ -60,9 +66,22 @@ ul li.checked {
 }
 
 .close {
-  grid-area: submit;
+  grid-area: close;
+  width: 20rem;
+  font-size: 1.25rem;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
 }
 
 #buttonDarkMode {
   grid-area: darkMode;
+  width: 20rem;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
 }
