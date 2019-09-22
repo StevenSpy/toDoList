@@ -1,6 +1,7 @@
 "use strict";
 
 const button = document.querySelector("#submit");
+const darkMode = document.querySelector("#buttonDarkMode");
 const input = document.querySelector("#userInput");
 const ul = document.querySelector("ul");
 let li;
@@ -55,6 +56,12 @@ function strikeThrough(event) {
   }
 }
 
+function changeNormalModeToDarkMode(ev) {
+  if (ev.target.tagName === "BUTTON") {
+    document.body.classList.toggle("darkMode");
+  }
+}
+
 function createListElement() {
   createNewLi();
   addTextNode();
@@ -79,5 +86,7 @@ function addListAfterEnterPress(key) {
 ul.addEventListener("click", strikeThrough);
 
 button.addEventListener("click", addListAfterClick);
+
+darkMode.addEventListener("click", changeNormalModeToDarkMode);
 
 input.addEventListener("keypress", addListAfterEnterPress);
