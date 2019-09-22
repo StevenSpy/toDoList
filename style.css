@@ -14,12 +14,12 @@ body {
   grid-template-areas: ". . titre . ." ". input input submit ." ". ul ul ul ." ". . darkMode . .";
   grid-gap: 1rem;
   margin-top: 25vh;
-  background-image: url(/soleil.jpg);
+  background-image: url("/soleil.jpg");
 }
 
 body.darkMode {
   color: white;
-  background-image: url(/Lune.jpg);
+  background-image: url("/Lune.jpg");
   background-size: cover;
 }
 
